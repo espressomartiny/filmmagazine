@@ -7,6 +7,7 @@ import Articles from "./components/Articles";
 import Reviews from "./components/Reviews";
 import Home from "./components/Home";
 import Menu from "./components/Menu";
+import Movie from "./components/Movie";
 
 const App = () => {
   return (
@@ -37,6 +38,12 @@ const router = createBrowserRouter([
       {
         path: "/movies",
         element: <Movies />,
+        children: [
+          {
+            path: "/movies/:id",
+            element: <Movie />
+          }
+        ]
       },
     ],
   },
